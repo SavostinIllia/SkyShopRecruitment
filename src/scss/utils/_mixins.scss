@@ -1,0 +1,32 @@
+@mixin small ($smallquery: 320px) {
+    @media screen and (min-width: $smallquery){
+        @content;
+    }
+}
+
+@mixin medium ($mediumquery : 640px) {
+    @media screen and (min-width: $mediumquery){
+        @content;
+    }
+}
+
+@mixin large ($largequery : 992px) {
+    @media screen and (min-width: $largequery){
+        @content;
+    }
+}
+@mixin xlarge {
+    @media screen and (min-width: 1240px){
+        @content;
+    }
+}
+
+@mixin xxlarge {
+    @media screen and (min-width: 1366px){
+        @content;
+    }
+}
+
+@mixin animationTransition ($time: .3s, $delay: 0s) {
+    transition: $time  $delay ease-in-out;
+}
