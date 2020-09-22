@@ -1,12 +1,15 @@
-import testFunction from '../js/modules/testModule'
+import slidersInit from "./modules/sliders";
+import {
+	fetchShopProducts
+} from "./modules/fetchShopProducts";
+import {
+	shopCartProperties
+} from "./modules/cartItems";
+import pageScrollHandler from './modules/pageScrollHandler'
 
-(function($){
-
-	$(document).ready(function(){
-		console.log('yes')
-		testFunction()
-	});
-
-
-})(jQuery);
-
+document.addEventListener("DOMContentLoaded", function () {
+	fetchShopProducts();
+	slidersInit();
+	shopCartProperties();
+	pageScrollHandler()
+});

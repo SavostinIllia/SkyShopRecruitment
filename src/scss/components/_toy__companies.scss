@@ -1,0 +1,52 @@
+#toy__companies {
+    padding: 35px 0;
+
+    .toy__companies-wrapper {
+        @include displayFlex($flexElementAlign: center);
+        position: relative;
+        padding: 0 25px;
+
+        .owl-item {
+            height: 120px;
+            opacity: .5;
+            @include animationTransition;
+            @include displayFlex($flexElementJustify: center, $flexElementAlign: center);
+
+            &:hover {
+                opacity: 1;
+                @include animationTransition;
+                cursor: pointer;
+            }
+        }
+
+        .owl-nav {
+            display: block;
+
+            .owl-prev,
+            .owl-next {
+                position: absolute;
+                left: 0px;
+                top: 50%;
+                transform: translateY(-50%);
+                outline: none;
+
+                @include xlarge {
+                    left: -20px;
+                }
+
+                span {
+                    font-size: 50px;
+                }
+            }
+
+            .owl-next {
+                left: unset;
+                right: 0px;
+
+                @include xlarge {
+                    right: -20px;
+                }
+            }
+        }
+    }
+}

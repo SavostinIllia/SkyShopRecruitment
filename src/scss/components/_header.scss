@@ -1,0 +1,481 @@
+header {
+    position: fixed;
+    top: 0;
+    @include animationTransition();
+    width: 100%;
+    z-index: 200;
+    background: #fff;
+    border-bottom: 2px solid $bordercolor;
+
+    // HEADER TOP
+    #header__top {
+        border-bottom: 1.4px solid $bordercolor;
+
+        .header__top-wrapper {
+            @include displayFlex;
+
+            .header__top-socials {
+                display: flex;
+                flex: 0 0 100%;
+
+                @include medium {
+                    flex: 0 0 50%;
+                }
+
+                &>div {
+                    padding-right: 20px;
+                    flex: 0 0 50%;
+                    padding: 7px;
+                    border-left: 1.5px solid $bordercolor;
+                    border-bottom: 1.5px solid $bordercolor;
+
+                    @include medium {
+                        flex: 0 0 49%;
+                        border-bottom: none;
+                    }
+
+                    @include large {
+                        border: none;
+                        max-width: 150px;
+                    }
+
+                    svg {
+                        margin-right: 7px;
+                    }
+
+                    a {
+                        font-size: 12px;
+                        @include fontWeight(500);
+                        color: #000;
+                        @include animationTransition;
+
+                        &:hover {
+                            color: $iconscolor;
+                        }
+                    }
+                }
+            }
+
+            .header__top-client {
+                @include displayFlex;
+                flex: 0 0 100%;
+
+
+                @include medium {
+                    flex: 0 0 50%;
+                    justify-content: flex-end;
+
+                }
+
+                &>div {
+                    padding: 7px;
+                    border-left: 1.5px solid $bordercolor;
+                    flex: 0 0 50%;
+
+                    @include medium {
+                        max-width: 160px;
+                        text-align: right;
+                        border-right: 1.5px solid $bordercolor;
+                    }
+
+                    label {
+                        font-size: 12px;
+                        @include fontWeight(500);
+
+
+
+                        span {
+                            @include fontWeight(500);
+                            color: $iconscolor;
+                            padding-right: 10px;
+                            font-size: 16px;
+
+
+                        }
+                    }
+
+                    select {
+                        border: 0;
+                        font-size: 12px;
+                        @include fontWeight(500);
+                        outline: none;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+
+                    svg {
+                        margin-right: 10px;
+                    }
+
+                    p {
+                        font-size: 12px;
+                        @include fontWeight(500);
+                        display: inline-block;
+
+                        svg {
+                            margin-left: 10px;
+                            margin-right: 0;
+                        }
+                    }
+
+                    &:last-of-type {
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // END HEADER TOP
+
+    // HEADER BOTTOM
+    #header__bottom {
+        .header__bottom-wrapper {
+            @include animationTransition;
+            padding: 20px 0px;
+            @include displayFlex;
+
+
+            .header__bottom-logo {
+
+                flex: 0 0 20%;
+                text-align: center;
+                order: 3;
+                margin-top: -57px;
+                margin-left: 32px;
+
+                @include medium {
+                    flex: 0 0 100%;
+                    order: 0;
+                    margin: 0 0 10px;
+                }
+
+                @include medium(768px) {
+                    flex: 0 0 20%;
+                }
+
+                img {
+                    @include animationTransition;
+                    max-width: 83px;
+
+                    @include medium(768px) {
+                        max-width: 125px;
+                    }
+
+                    @include large {
+                        max-width: 235px;
+                    }
+                }
+            }
+
+            .header__bottom-search {
+                @include displayFlex(100%, space-between, center);
+                flex: 0 0 100%;
+
+                max-width: 750px;
+                flex-wrap: wrap;
+                padding: 0 20px;
+
+                @include medium(768px) {
+                    flex: 0 0 80%;
+                    padding: 0 10px 0 0;
+                }
+
+                .search-panel {
+                    flex: 0 0 100%;
+
+                    @include medium {
+                        flex: 0 0 70%;
+                    }
+
+                    input {
+                        width: 100%;
+                        padding: 17px 20px;
+                        outline: none;
+                        border-radius: 10px;
+                        border: 1.5px solid $bordercolor;
+                        margin-bottom: 20px;
+
+                        @include medium {
+                            margin-bottom: 0;
+                        }
+
+                        @include large {
+                            max-width: 370px;
+                            display: block;
+                            margin-left: auto;
+                        }
+
+                        &::placeholder {
+                            text-transform: uppercase;
+                            font-size: 14px;
+                            color: #000;
+                            @include fontWeight(400);
+                        }
+                    }
+                }
+
+                .cart {
+                    position: relative;
+                    border-radius: 10px;
+                    padding: 8px 30px 8px 20px;
+                    display: flex;
+                    align-items: center;
+                    border: 1.5px solid $iconscolor;
+                    justify-content: flex-end;
+                    flex: 0 0 60%;
+                    margin-left: auto;
+                    max-width: 165px;
+
+                    @include large {
+                        max-width: 195px;
+                    }
+
+                    .cart-items-total-price {
+                        padding-right: 15px;
+                        font-size: 16px;
+                        @include fontWeight(500);
+                        color: #e20613;
+                    }
+
+                    .cart-image {
+                        border: none;
+                        background: transparent;
+                        outline: none;
+
+                        &:disabled {
+                            opacity: .5;
+
+                            &:hover {
+                                cursor: not-allowed;
+                            }
+                        }
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+
+                    .cart-items-counter {
+                        position: absolute;
+                        right: 25px;
+                        border-radius: 50%;
+                        background: #52c0da;
+                        padding: 1px;
+                        font-size: 12px;
+                        text-align: center;
+                        color: #fff;
+                        width: 20px;
+                        padding-top: 3px;
+                        height: 20px;
+                    }
+
+                    // CART ITEMS
+                    .cart-block {
+                        border: none;
+                        background: #fff;
+                        position: fixed;
+                        z-index: 100;
+                        top: 236px;
+                        right: 0px;
+                        max-height: 1.2px;
+                        width: 100%;
+                        @include animationTransition;
+                        overflow: hidden;
+                        max-width: 1140px;
+                        left: 50%;
+                        transform: translateX(-50%);
+
+                        @include medium {
+                            top: 195px
+                        }
+
+                        @include medium(768px) {
+                            top: 167px
+                        }
+
+                        &.show {
+                            @include animationTransition;
+                            max-height: 455px;
+                            border: 1.5px solid $bordercolor;
+                            overflow-y: scroll;
+                            z-index: 300;
+
+                            @include medium {
+                                top: 195px
+                            }
+
+                            @include medium(768px) {
+                                top: 167px
+                            }
+
+                            @include large {
+                                top: 221px
+                            }
+                        }
+
+                        &.sticked {
+                            top: 216px;
+
+                            @include medium {
+                                top: 175px
+                            }
+
+                            @include medium(768px) {
+                                top: 120px
+                            }
+                        }
+
+                        .cart__item {
+                            @include displayFlex(100%, center, inherit);
+                            margin: 10px 0;
+                            border-bottom: 1.5px solid $bordercolor;
+                            padding: 10px 0;
+                            margin: 10px 0;
+
+                            &-img {
+                                flex: 0 0 30%;
+                                max-width: 110px;
+                                border-right: 1.5px solid $bordercolor;
+                                display: flex;
+                                justify-content: center;
+
+                                @include medium(768px) {
+                                    max-width: 120px;
+                                    flex: 0 0 20%;
+                                }
+
+                                @include large(1010px) {
+                                    max-width: 170px;
+                                }
+                            }
+
+                            &-name {
+
+                                padding: 0 20px;
+                                color: #002936;
+                                @include fontWeight;
+                                border-right: 1.5px solid $bordercolor;
+                                align-items: center;
+                                display: none;
+
+                                @include small(470px) {
+                                    display: flex;
+                                    padding: 0 5px;
+                                    font-size: 11px;
+                                    flex: 0 0 30%;
+                                }
+
+                                @include medium {
+                                    display: flex;
+                                    font-size: 14px;
+                                    flex: 0 0 40%;
+                                }
+
+                                @include medium(768px) {
+                                    font-size: 17px;
+                                    flex: 0 0 48%;
+                                }
+
+
+                            }
+
+                            &-price {
+                                color: $redTextColor;
+                                @include fontWeight;
+                                border-right: 1.5px solid $bordercolor;
+                                @include displayFlex(unset, center, center);
+                                padding: 0 10px;
+                                justify-content: center;
+                                flex: 0 0 25%;
+
+                                @include small(470px) {
+                                    flex: 0 0 15%;
+                                }
+
+                                @include medium {
+                                    flex: 0 0 10%;
+                                }
+
+                            }
+
+                            &-incart {
+                                padding: 0 10px;
+                                @include fontWeight;
+                                color: #002936;
+                                border-right: 1.5px solid $bordercolor;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                flex: 0 0 20%;
+
+                                @include small(470px) {
+                                    flex: 0 0 10%;
+                                }
+
+                                @include medium {
+                                    flex: 0 0 10%;
+                                }
+                            }
+
+                            &-delete {
+                                background: transparent;
+                                border: none;
+                                outline: none;
+                                flex: 0 0 15%;
+
+
+
+                                img {
+                                    width: 30px;
+                                }
+
+                                &:hover {
+                                    cursor: pointer;
+                                }
+                            }
+
+                            &:last-child {
+                                border: none
+                            }
+                        }
+                    }
+
+                    // END CART ITEMS
+                }
+            }
+        }
+    }
+
+    // END HEADER BOTTOM
+
+    // SCROLLED PAGE HEADER STYLES
+    &.header-scrolled {
+        @include animationTransition;
+
+        #header__bottom {
+            .header__bottom-wrapper {
+                @include animationTransition;
+                padding: 10px 0 10px;
+
+                .header__bottom-logo {
+                    text-align: center;
+
+                    img {
+                        @include medium {
+                            max-width: 83px;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    // END SCROLLED PAGE HEADER STYLES
+
+}

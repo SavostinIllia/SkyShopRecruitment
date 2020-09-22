@@ -1,0 +1,61 @@
+#conditions {
+
+    padding: 25px 20px;
+
+    .conditions-wrapper {
+        @include displayFlex(auto, center, inherit);
+        margin-left: -20px;
+
+        .condition-item {
+            flex: 0 0 100%;
+            max-width: 275px;
+            margin-left: 20px;
+            border: 1px solid $bordercolor;
+            text-align: center;
+            padding: 20px 0 30px;
+            @include animationTransition;
+            margin-bottom: 20px;
+
+            @include medium {
+                flex-basis: calc(50% - 20px);
+
+            }
+
+            @include large {
+                flex-basis: calc(25% - 20px);
+            }
+
+            img {
+                padding-bottom: 25px;
+            }
+
+            p {
+                font-size: 16px;
+                @include fontWeight;
+                text-transform: uppercase;
+                @include animationTransition;
+
+                span {
+                    @include fontWeight(400);
+                    display: block;
+                    text-transform: none;
+                    padding-top: 3px;
+
+                }
+            }
+
+            &:hover {
+                background: #0062ab;
+                @include animationTransition;
+                cursor: pointer;
+                box-shadow: inset -4px -4px 8px -1px rgba(255, 255, 255, 1);
+
+                p {
+                    color: #fff;
+                    @include animationTransition;
+                }
+            }
+        }
+    }
+
+}

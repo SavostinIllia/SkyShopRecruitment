@@ -1,3 +1,15 @@
-@import 'general/general';
 @import 'utils/vars';
 @import 'utils/mixins';
+@import 'general/general';
+
+@import 'components/header';
+@import 'components/shop__navigation';
+@import 'components/hero__slider';
+@import 'components/kids__offer';
+@import 'components/toy__companies';
+@import 'components/toys__shop';
+@import 'components/conditions';
+@import 'components/newsletter';
+@import 'components/footer';
+@import 'components/copyright';
+@import 'components/popup'
