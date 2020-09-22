@@ -1,0 +1,68 @@
+#kids__offer {
+    padding-top: 30px;
+
+    .kids__offer-wrapper {
+        @include displayFlex(100%, center, center);
+
+        @include large {
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        @include large(1140px) {
+            padding: 0;
+        }
+
+        .offer {
+            flex: 0 0 100%;
+            overflow: hidden;
+            position: relative;
+            @include displayFlex(100%, space-between, center);
+            height: 330px;
+            padding: 0 10px;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 30px;
+            max-width: 560px;
+
+            @include large {
+                flex: 0 0 48%;
+                padding-left: 45px;
+            }
+
+            @include xlarge {
+                flex: 0 0 50%;
+                max-width: 550px;
+            }
+
+            p {
+                position: relative;
+                font-size: 34px;
+                text-transform: uppercase;
+                @include fontWeight;
+                color: #fff;
+                z-index: 20;
+                flex: 0 0 100%;
+                padding-bottom: 40px;
+            }
+
+            &.boys {
+                .btn {
+                    &:hover {
+                        background: #FF8E00;
+                        color: #fff
+                    }
+                }
+            }
+
+            &.girls {
+                .btn {
+                    &:hover {
+                        background: #8CCC14;
+                        color: #fff
+                    }
+                }
+            }
+        }
+    }
+}

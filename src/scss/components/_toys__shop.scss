@@ -1,0 +1,236 @@
+#toys__shop {
+    padding: 50px 0;
+    background: #f1fafc;
+
+    .toys__shop-wrapper {
+
+        // TOYS SHOP SECTION TITLE
+        .toys__shop-title {
+
+            display: inline-block;
+            text-align: center;
+            position: relative;
+            font-size: 26px;
+            text-transform: uppercase;
+            @include fontWeight;
+            color: $greenColor;
+            padding-bottom: 10px;
+            margin: 0 auto 25px;
+
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 1.5px;
+                background: $greenColor;
+            }
+        }
+
+        // END TOYS SHOP SECTION TITLE
+
+        // SEARCH ERROR
+        .search-result {
+            font-size: 18px;
+            @include fontWeight(500);
+            color: $redTextColor;
+            margin-left: 20px;
+
+            span {
+                @include fontWeight(600);
+                font-size: 20px;
+                color: #042936;
+            }
+        }
+
+        // END SEARCH ERROR
+
+        // TOY CARD
+        .toy__card {
+            border-radius: 10px;
+            flex: 0 0 100%;
+            max-width: 275px;
+            text-align: center;
+            background: #fff;
+            padding: 15px 0px;
+            min-height: 450px;
+            margin-left: 25px;
+            margin-bottom: 20px;
+
+            @include medium {
+                flex: 0 0 50%;
+            }
+
+            @include large {
+                flex-basis: calc(25% - 25px);
+                max-width: 267px;
+            }
+
+            &:hover {
+                cursor: pointer;
+
+                .toy__card-option-wrapper {
+                    @include animationTransition;
+                    opacity: 1;
+                }
+            }
+
+            &-header {
+                @include displayFlex;
+                padding-bottom: 50px;
+
+                &-option {
+                    border: 1px solid $bordercolor;
+                    color: #002936;
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    @include fontWeight(500);
+                    padding: 5px 10px;
+                }
+
+                &-discount {
+                    background: $redTextColor;
+                    font-size: 13px;
+                    color: #fff;
+                    padding: 8px;
+                    border-radius: 3px;
+                }
+            }
+
+            &-img {
+                height: 200px;
+                margin: 0 auto;
+            }
+
+            &-option-wrapper {
+                padding: 0 20px;
+                @include displayFlex($flexElementJustify:center, $flexElementAlign:center);
+                opacity: 0;
+                @include animationTransition;
+                padding-bottom: 10px;
+
+                &-button {
+                    padding: 10px;
+                    @include animationTransition;
+                    background: #424242;
+                    vertical-align: middle;
+                    font-size: 13px;
+                    border: none;
+                    border-radius: 10px;
+                    @include displayFlex($flexElementWidth: unset, $flexElementJustify:center, $flexElementAlign:center);
+                    outline: none;
+
+
+                    &:hover {
+                        cursor: pointer;
+                        background: #f57083;
+                        @include animationTransition;
+                    }
+
+                    &.add {
+                        img {
+                            padding-right: 5px;
+                        }
+
+                        color: #fff;
+                        text-transform: uppercase;
+                        @include fontWeight;
+                        padding: 6px 10px;
+                        margin-right: 5px;
+
+
+                    }
+
+                    &.see {
+                        margin-right: 5px;
+                        width: 29px;
+                        height: 29px;
+                        padding: 0;
+
+                        img {
+                            padding: 0;
+                        }
+
+                    }
+
+                    &.like {
+                        width: 29px;
+                        height: 29px;
+
+                        img {
+                            width: 15px;
+                        }
+
+                        &.active {
+                            background: #f57083;
+                        }
+                    }
+                }
+            }
+
+            &-name {
+                color: #002936;
+                font-size: 15px;
+                @include fontWeight(500);
+                min-height: 50px;
+                padding: 0 35px 15px;
+                ;
+            }
+
+            &-price {
+                display: block;
+                font-size: 18px;
+                @include fontWeight(500);
+                color: $redTextColor;
+                padding-bottom: 8px;
+
+                &-old {
+                    font-size: 14px;
+                    color: #002936;
+                    text-decoration: line-through;
+                    @include fontWeight(500);
+                }
+            }
+        }
+
+        // END TOY CARD
+
+        .recommended {
+            text-align: center;
+            padding: 0 20px 60px;
+
+            @include large(1140px) {
+                padding: 0 0 60px;
+            }
+
+            .recommended-toys {
+                @include displayFlex(auto, center, inherit);
+                margin-left: -25px;
+
+            }
+        }
+
+        .bestseller {
+            text-align: center;
+            padding: 0 20px;
+
+            @include large(1140px) {
+                padding: 0;
+            }
+
+            .toys__shop-title {
+                color: $iconscolor;
+
+                &:before {
+                    background: $iconscolor;
+                }
+            }
+
+            .bestseller-toys {
+                @include displayFlex(auto, center, inherit);
+                margin-left: -25px;
+            }
+        }
+    }
+}

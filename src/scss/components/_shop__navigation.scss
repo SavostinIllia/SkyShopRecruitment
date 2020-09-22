@@ -1,0 +1,158 @@
+#shop__navigation {
+    background: $iconscolor;
+    margin-top: 235px;
+
+    @include medium {
+        margin-top: 195px;
+    }
+
+    @include medium(768px) {
+        margin-top: 169px;
+    }
+
+    @include large {
+        margin-top: 222px;
+    }
+
+    nav {
+
+        ul {
+            @include displayFlex;
+
+            li {
+                padding: 0px 30px;
+                @include animationTransition;
+                flex: 0 0 100%;
+                text-align: center;
+
+                @include medium {
+                    flex: 0 0 50%;
+                    border-left: 1.5px solid $bordercolor;
+                    border-bottom: 1.5px solid $bordercolor;
+                }
+
+                @include large {
+                    flex: 0 0 33.33%;
+                }
+
+                @include large(1100px) {
+                    flex: unset;
+                    border: none
+                }
+
+                a {
+                    display: inline-block;
+                    padding: 20px 0;
+                    font-size: 16px;
+                    @include fontWeight;
+                    color: #fff;
+                }
+
+                &:first-child {
+                    position: relative;
+                    padding: 0;
+
+                    a {
+                        padding: 20px 40px;
+
+                        @include large(1100px) {
+                            padding-right: 60px;
+                            border-right: 1.2px solid #fff;
+                            border-left: 1.2px solid #fff;
+                        }
+
+                        img {
+                            width: 18px;
+                            margin-right: 17px;
+                        }
+                    }
+
+                }
+
+                &:nth-child(2) {
+
+                    @include xlarge {
+                        padding-left: 60px;
+                    }
+                }
+
+            }
+
+            .with-submenu {
+                order: 1;
+
+                @include medium {
+                    flex: 0 0 100%;
+                }
+
+                @include large(1100px) {
+                    flex: unset;
+                    order: unset;
+                }
+
+                .submenu {
+                    position: absolute;
+                    border-right: 1.2px solid $iconscolor;
+                    border-left: 1.2px solid $iconscolor;
+                    border-bottom: 1.2px solid $iconscolor;
+                    max-height: 0px;
+                    overflow: hidden;
+                    @include animationTransition;
+                    background: #fff;
+                    z-index: 100;
+
+                    li {
+                        padding: 0;
+                        border-bottom: 1px solid $bordercolor;
+                        width: 100%;
+                        @include animationTransition;
+                        order: 1;
+
+                        @include medium {
+                            border-left: 1.5px solid $bordercolor
+                        }
+
+                        @include large(1100px) {
+                            border-left: none;
+                            border-bottom: 1.2px solid $bordercolor;
+                            text-align: left;
+                        }
+
+                        a {
+                            width: 100%;
+                            color: #000;
+                            @include fontWeight(500);
+                            font-size: 15px;
+                            @include animationTransition;
+                            padding: 23.1px 40px;
+                        }
+
+                        &:last-child {
+                            border-bottom: none;
+
+                            @include medium {
+                                flex: 0 0 100%;
+                            }
+                        }
+
+                        &:hover {
+                            background: $iconscolor;
+
+                            a {
+                                color: #fff;
+                            }
+                        }
+                    }
+
+
+                }
+
+                &:hover {
+                    .submenu {
+                        max-height: 1000px;
+                    }
+                }
+            }
+        }
+    }
+}

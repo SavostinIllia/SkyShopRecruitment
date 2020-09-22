@@ -1,0 +1,90 @@
+#newsletter {
+
+    .newsletter-wrapper {
+        position: relative;
+        padding: 50px 20px;
+        @include displayFlex($flexElementJustify: center);
+
+        @include large {
+            padding: 85px 0 100px 100px;
+        }
+
+        img {
+            position: absolute;
+            bottom: -88px;
+            left: -130px;
+            z-index: 1;
+        }
+
+        .newsletter-form {
+            text-align: center;
+            position: relative;
+            z-index: 100;
+
+            h2 {
+                font-size: 18px;
+                @include fontWeight;
+                color: #fff;
+                text-transform: uppercase;
+                padding-bottom: 10px;
+
+                @include medium {
+                    padding-bottom: 25px;
+                    font-size: 24px;
+                }
+            }
+
+            p {
+                font-size: 16px;
+                color: #fff;
+                padding-bottom: 20px;
+
+                @include medium {
+                    padding-bottom: 45px;
+                    font-size: 18px;
+                }
+            }
+
+            .newsletter-form {
+                input {
+                    width: 250px;
+                    padding: 15px 10px;
+                    border-radius: 10px;
+                    border: none;
+                    outline: none;
+                    font-size: 18px;
+                    margin-bottom: 20px;
+                    margin-right: 10px;
+
+
+                    @include medium {
+                        width: 380px;
+                        margin-right: 10px;
+
+                    }
+                }
+
+                button {
+                    color: #fff;
+                    text-transform: uppercase;
+                    font-size: 16px;
+                    @include fontWeight;
+                    background: $redTextColor;
+                    border: 1.5px solid transparent;
+                    outline: none;
+                    padding: 15px 45px;
+                    border-radius: 7px;
+                    @include animationTransition;
+
+                    &:hover {
+                        cursor: pointer;
+                        background: #fff;
+                        border: 1.5px solid $iconscolor;
+                        @include animationTransition;
+                        color: $iconscolor;
+                    }
+                }
+            }
+        }
+    }
+}

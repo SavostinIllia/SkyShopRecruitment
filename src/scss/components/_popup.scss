@@ -1,0 +1,101 @@
+.popup {
+    position: fixed;
+    height: auto;
+    background: rgba(0, 0, 0, .6);
+    z-index: 200;
+    top: 0;
+    bottom: 0;
+    @include displayFlex(100%, center, center);
+
+    .popup__wrapper {
+        background: #fff;
+        padding: 30px;
+        position: relative;
+        text-align: center;
+        width: 290px;
+
+        &-status {
+            @include fontWeight;
+            color: $greenColor;
+            font-size: 24px;
+
+            &.delete {
+                color: $redTextColor
+            }
+        }
+
+        &-name {
+            @include fontWeight;
+            color: #002936;
+            font-size: 18px;
+            padding-bottom: 15px;
+        }
+
+        &-price {
+            @include fontWeight;
+            color: $redTextColor;
+            font-size: 18px;
+            padding-bottom: 15px;
+        }
+
+        &-cart {
+            background: $iconscolor;
+            color: #fff;
+            border: 1.5px solid #fff;
+
+
+            &.error,
+            &.save {
+                background: $redTextColor;
+                color: #fff;
+                border: 1.5px solid $redTextColor;
+                margin: 0 10px 0 0;
+                padding: 13px 20px;
+
+                &:hover {
+                    background: #fff;
+                    color: $redTextColor;
+                    border: 1.5px solid $redTextColor;
+                }
+            }
+
+            &.save {
+                background: $greenColor;
+                border: 1.5px solid $greenColor;
+
+                &:hover {
+                    color: $greenColor;
+                    border: 1.5px solid $greenColor
+                }
+            }
+
+            &:hover {
+                background: #fff;
+                color: $iconscolor;
+                border: 1.5px solid $iconscolor;
+            }
+        }
+
+        &-close {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            border-radius: 50%;
+            padding: 5px 10px;
+            background: #000;
+            border: 2px solid #fff;
+            color: #fff;
+            font-size: 24px;
+            @include animationTransition;
+
+            &:hover {
+                background: #fff;
+                color: #000;
+                border: 2px solid #000;
+                cursor: pointer;
+                @include animationTransition;
+                outline: none;
+            }
+        }
+    }
+}

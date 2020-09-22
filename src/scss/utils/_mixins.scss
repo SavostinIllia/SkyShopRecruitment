@@ -1,32 +1,46 @@
 @mixin small ($smallquery: 320px) {
-    @media screen and (min-width: $smallquery){
+    @media screen and (min-width: $smallquery) {
         @content;
     }
 }
 
 @mixin medium ($mediumquery : 640px) {
-    @media screen and (min-width: $mediumquery){
+    @media screen and (min-width: $mediumquery) {
         @content;
     }
 }
 
 @mixin large ($largequery : 992px) {
-    @media screen and (min-width: $largequery){
+    @media screen and (min-width: $largequery) {
         @content;
     }
 }
+
 @mixin xlarge {
-    @media screen and (min-width: 1240px){
+    @media screen and (min-width: 1240px) {
         @content;
     }
 }
 
 @mixin xxlarge {
-    @media screen and (min-width: 1366px){
+    @media screen and (min-width: 1366px) {
         @content;
     }
 }
 
 @mixin animationTransition ($time: .3s, $delay: 0s) {
-    transition: $time  $delay ease-in-out;
+    transition: $time $delay ease-in-out;
+}
+
+@mixin fontWeight ($fontWeightPropertie : 600) {
+    font-weight: $fontWeightPropertie;
+}
+
+@mixin displayFlex ($flexElementWidth : 100%, $flexElementJustify: space-between, $flexElementAlign:inherit) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: $flexElementWidth;
+    justify-content: $flexElementJustify;
+    align-items: $flexElementAlign;
 }
